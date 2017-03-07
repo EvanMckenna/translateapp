@@ -8,23 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextViewDelegate {
+class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
 
     @IBOutlet var textToTranslate: UITextView!
     @IBOutlet weak var translatedText: UITextView!
+    @IBOutlet var languagePicker: UIPickerView!
     
     //var data = NSMutableData()
     
+    var pickerData: [String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //connect
+        self.languagePicker.delegate = self
+        self.languagePicker.dataSource = self
+        
+        //input
+        pickerData = ["French", "German", "Spanish"]
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
+    
+    
+    func numberOfComponents(in: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent: Int) -> Int{
+        return pickerData.count
+    }
+    
+
     
     @IBAction func translate(_ sender: AnyObject) {
         
@@ -48,24 +70,24 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         var result = "<Translation Error>"
         
-       // NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
+      // NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
             
-           // indicator.stopAnimating()
+            indicator.stopAnimating()
             
             //if let httpResponse = response as? HTTPURLResponse {
                 //if(httpResponse.statusCode == 200){
                     
-                   // let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
+                    //let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
                     
                     //if(jsonDict.value(forKey: "responseStatus") as! NSNumber == 200){
-                       // let responseData: NSDictionary = jsonDict.object(forKey: "responseData") as! NSDictionary
+                      // let responseData: NSDictionary = jsonDict.object(forKey: "responseData") as! NSDictionary
                         
-                       // result = responseData.object(forKey: "translatedText") as! String
+                      // result = responseData.object(forKey: "translatedText") as! String
                     //}
-               // }
+                }
                 
-                self.translatedText.text = result
-            }
+               // self.translatedText.text = result
+           // }
             
             
         //}
@@ -83,7 +105,6 @@ class ViewController: UIViewController, UITextViewDelegate {
 
 
 
-        
-    //}
+//}
 
 
