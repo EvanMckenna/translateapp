@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
     
-    @IBOutlet weak var textToTranslate: UITextView!
+
+    @IBOutlet var textToTranslate: UITextView!
     @IBOutlet weak var translatedText: UITextView!
     
     //var data = NSMutableData()
@@ -47,26 +48,42 @@ class ViewController: UIViewController {
         
         var result = "<Translation Error>"
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
+       // NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
             
-            indicator.stopAnimating()
+           // indicator.stopAnimating()
             
-            if let httpResponse = response as? HTTPURLResponse {
-                if(httpResponse.statusCode == 200){
+            //if let httpResponse = response as? HTTPURLResponse {
+                //if(httpResponse.statusCode == 200){
                     
-                    let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
+                   // let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
                     
-                    if(jsonDict.value(forKey: "responseStatus") as! NSNumber == 200){
-                        let responseData: NSDictionary = jsonDict.object(forKey: "responseData") as! NSDictionary
+                    //if(jsonDict.value(forKey: "responseStatus") as! NSNumber == 200){
+                       // let responseData: NSDictionary = jsonDict.object(forKey: "responseData") as! NSDictionary
                         
-                        result = responseData.object(forKey: "translatedText") as! String
-                    }
-                }
+                       // result = responseData.object(forKey: "translatedText") as! String
+                    //}
+               // }
                 
                 self.translatedText.text = result
             }
+            
+            
+        //}
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n")
+        {
+            textToTranslate.resignFirstResponder()
+            return false
         }
-        
+        return true
     }
 }
+
+
+
+
+        
+    //}
+
 
