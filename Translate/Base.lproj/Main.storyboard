@@ -46,6 +46,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Translate"/>
+                                <connections>
+                                    <action selector="translate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DUb-BP-5uC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,6 +56,7 @@
                     <connections>
                         <outlet property="languagePicker" destination="wSr-DN-3fn" id="5zn-QZ-hpR"/>
                         <outlet property="textToTranslate" destination="dii-Vg-90N" id="7uN-im-EKT"/>
+                        <outlet property="translatedText" destination="LaV-KV-DTJ" id="JY5-Sk-HbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

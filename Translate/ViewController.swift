@@ -17,17 +17,14 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
     
     //var data = NSMutableData()
     
-    var pickerData: [String] = [String]()
-    
+    var pickerData = ["French", "German", "Spanish"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //connect
-        self.languagePicker.delegate = self
-        self.languagePicker.dataSource = self
-        
-        //input
-        pickerData = ["French", "German", "Spanish"]
+        languagePicker.delegate=self
+        languagePicker.dataSource=self
         
     }
     
@@ -38,13 +35,18 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
     }
     
     
-    func numberOfComponents(in: UIPickerView) -> Int {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent: Int) -> Int{
-        return pickerData.count
-    }
+    
     
 
     
@@ -70,27 +72,27 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
         
         var result = "<Translation Error>"
         
-      // NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
+      NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { response, data, error in
             
             indicator.stopAnimating()
             
-            //if let httpResponse = response as? HTTPURLResponse {
-                //if(httpResponse.statusCode == 200){
+            if let httpResponse = response as? HTTPURLResponse {
+                if(httpResponse.statusCode == 200){
                     
-                    //let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
+                    let jsonDict: NSDictionary!=(try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as! NSDictionary
                     
-                    //if(jsonDict.value(forKey: "responseStatus") as! NSNumber == 200){
-                      // let responseData: NSDictionary = jsonDict.object(forKey: "responseData") as! NSDictionary
+                    if(jsonDict.value(forKey: "responseStatus") as! NSNumber == 200){
+                       let responseData: NSDictionary = jsonDict.object(forKey: "responseData") as! NSDictionary
                         
-                      // result = responseData.object(forKey: "translatedText") as! String
-                    //}
+                       result = responseData.object(forKey: "translatedText") as! String
+                    }
                 }
                 
-               // self.translatedText.text = result
-           // }
+                self.translatedText.text = result
+           }
             
             
-        //}
+        }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if(text == "\n")
@@ -105,6 +107,6 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
 
 
 
-//}
+}
 
 
