@@ -11,6 +11,9 @@
 		20199A1C1E70CECA00DB1DCE /* Microphone-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 20199A1B1E70CECA00DB1DCE /* Microphone-48.png */; };
 		20199A1E1E70D09400DB1DCE /* Microphone-48-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 20199A1D1E70D09400DB1DCE /* Microphone-48-2.png */; };
 		20199A201E70D4F000DB1DCE /* Checkmark-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 20199A1F1E70D4F000DB1DCE /* Checkmark-64.png */; };
+		47A92EC51E71919C004776BB /* White logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A92EC41E71919C004776BB /* White logo.png */; };
+		47A92EC71E71931B004776BB /* Logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A92EC61E71931B004776BB /* Logo1.png */; };
+		47A92EC91E7197DF004776BB /* Delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 47A92EC81E7197DF004776BB /* Delete-50.png */; };
 		FFD2F9B71BD1101A00F54057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2F9B61BD1101A00F54057 /* AppDelegate.swift */; };
 		FFD2F9B91BD1101A00F54057 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2F9B81BD1101A00F54057 /* ViewController.swift */; };
 		FFD2F9BC1BD1101A00F54057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD2F9BA1BD1101A00F54057 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		20199A1B1E70CECA00DB1DCE /* Microphone-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-48.png"; sourceTree = "<group>"; };
 		20199A1D1E70D09400DB1DCE /* Microphone-48-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Microphone-48-2.png"; sourceTree = "<group>"; };
 		20199A1F1E70D4F000DB1DCE /* Checkmark-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark-64.png"; sourceTree = "<group>"; };
+		47A92EC41E71919C004776BB /* White logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "White logo.png"; sourceTree = "<group>"; };
+		47A92EC61E71931B004776BB /* Logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo1.png; sourceTree = "<group>"; };
+		47A92EC81E7197DF004776BB /* Delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete-50.png"; sourceTree = "<group>"; };
 		FFD2F9B31BD1101A00F54057 /* Translate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD2F9B61BD1101A00F54057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFD2F9B81BD1101A00F54057 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +74,10 @@
 				FFD2F9BD1BD1101A00F54057 /* Assets.xcassets */,
 				FFD2F9BF1BD1101A00F54057 /* LaunchScreen.storyboard */,
 				200736051E70E8410046ED8F /* descendant.png */,
+				47A92EC41E71919C004776BB /* White logo.png */,
+				47A92EC61E71931B004776BB /* Logo1.png */,
 				FFD2F9C21BD1101A00F54057 /* Info.plist */,
+				47A92EC81E7197DF004776BB /* Delete-50.png */,
 				20199A1B1E70CECA00DB1DCE /* Microphone-48.png */,
 				20199A1D1E70D09400DB1DCE /* Microphone-48-2.png */,
 				20199A1F1E70D4F000DB1DCE /* Checkmark-64.png */,
@@ -107,7 +116,6 @@
 				TargetAttributes = {
 					FFD2F9B21BD1101A00F54057 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = E662V5G5GY;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -137,7 +145,10 @@
 			files = (
 				FFD2F9C11BD1101A00F54057 /* LaunchScreen.storyboard in Resources */,
 				20199A1E1E70D09400DB1DCE /* Microphone-48-2.png in Resources */,
+				47A92EC71E71931B004776BB /* Logo1.png in Resources */,
+				47A92EC91E7197DF004776BB /* Delete-50.png in Resources */,
 				20199A1C1E70CECA00DB1DCE /* Microphone-48.png in Resources */,
+				47A92EC51E71919C004776BB /* White logo.png in Resources */,
 				20199A201E70D4F000DB1DCE /* Checkmark-64.png in Resources */,
 				FFD2F9BE1BD1101A00F54057 /* Assets.xcassets in Resources */,
 				200736061E70E8410046ED8F /* descendant.png in Resources */,
@@ -271,8 +282,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E662V5G5GY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Translate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ie.evan.Translate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,8 +296,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = E662V5G5GY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Translate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ie.evan.Translate;
 				PRODUCT_NAME = "$(TARGET_NAME)";

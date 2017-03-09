@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
     @IBOutlet weak var translatedText: UITextView!
     @IBOutlet var languagePicker: UIPickerView!
     @IBOutlet var speechButton: UIButton!
+    @IBOutlet weak var clearText: UIButton!
     
     //var data = NSMutableData()
     
@@ -250,6 +251,11 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
             }
         }
     
+    
+    
+    
+    
+    
     //AppCoda - http://www.appcoda.com/siri-speech-framework/
     
     @IBAction func speechTapped(_ sender: Any) {
@@ -327,7 +333,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
             print("audioEngine couldn't start because of an error.")
         }
         
-        textToTranslate.text = "Say something, I'm listening!"
+        textToTranslate.text = "Say something, I am ready to translate for you!"
         
     }
     
@@ -337,6 +343,11 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
         } else {
             speechButton.isEnabled = false
         }
+    }
+    
+    @IBAction func clearText(_ sender: AnyObject)
+    {
+        textToTranslate.text=""
     }
     
     
