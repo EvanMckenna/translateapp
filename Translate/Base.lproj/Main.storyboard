@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,10 +39,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-4r-u23">
-                                <rect key="frame" x="2" y="531" width="373" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkW-4r-u23">
+                                <rect key="frame" x="0.0" y="531" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="F2B-tg-cv3"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHT-Uh-ywA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
@@ -55,9 +58,12 @@
                                     <constraint firstAttribute="height" constant="170" id="Af3-FO-p0R"/>
                                 </constraints>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGy-jQ-K6m">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGy-jQ-K6m">
                                 <rect key="frame" x="16" y="549" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="3vI-Kd-5s9"/>
+                                    <constraint firstAttribute="height" constant="30" id="yt3-Zo-aFF"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Delete-50.png"/>
                                 <connections>
                                     <action selector="clearText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p77-cG-8Yo"/>
@@ -73,9 +79,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-7M-DEK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-7M-DEK">
                                 <rect key="frame" x="329" y="549" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="59D-WE-ArJ"/>
+                                    <constraint firstAttribute="width" constant="30" id="kX5-ss-r8u"/>
+                                </constraints>
                                 <state key="normal" title="Translate" image="Checkmark-64.png">
                                     <color key="titleShadowColor" red="0.92911610700000002" green="0.92911610700000002" blue="0.92911610700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -112,15 +121,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XGy-jQ-K6m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1lb-li-GbV"/>
                             <constraint firstAttribute="trailing" secondItem="dii-Vg-90N" secondAttribute="trailing" id="8EW-dB-Vbt"/>
                             <constraint firstAttribute="trailing" secondItem="wSr-DN-3fn" secondAttribute="trailing" id="CEE-KA-Fji"/>
                             <constraint firstItem="wSr-DN-3fn" firstAttribute="top" secondItem="LaV-KV-DTJ" secondAttribute="bottom" constant="8" id="GfH-Bg-YT8"/>
                             <constraint firstAttribute="trailing" secondItem="LaV-KV-DTJ" secondAttribute="trailing" id="GlX-bB-dzZ"/>
                             <constraint firstItem="LaV-KV-DTJ" firstAttribute="top" secondItem="dii-Vg-90N" secondAttribute="bottom" id="HCQ-AL-QlO"/>
+                            <constraint firstItem="Tk9-7M-DEK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PJw-1Y-KKG"/>
                             <constraint firstItem="wSr-DN-3fn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UJa-6H-uw9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XGy-jQ-K6m" secondAttribute="bottom" constant="24" id="Uh2-H0-9dX"/>
+                            <constraint firstItem="fkW-4r-u23" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VpS-wh-9NS"/>
+                            <constraint firstAttribute="trailing" secondItem="fkW-4r-u23" secondAttribute="trailing" id="Vvy-AY-7yH"/>
                             <constraint firstItem="LaV-KV-DTJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ebv-7F-FOo"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iZn-At-5jC"/>
                             <constraint firstItem="dii-Vg-90N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ibF-UK-Qic"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tk9-7M-DEK" secondAttribute="bottom" constant="24" id="zVg-n1-B7N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="app-JR-d1q">
