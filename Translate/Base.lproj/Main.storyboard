@@ -20,48 +20,144 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&lt;Text to Translate&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dii-Vg-90N">
-                                <rect key="frame" x="16" y="28" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&lt;Text to Translate&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dii-Vg-90N">
+                                <rect key="frame" x="0.0" y="20" width="375" height="165"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="SIr-ni-EjE"/>
+                                    <constraint firstAttribute="height" constant="165" id="lFa-0C-dOH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="FxH-Er-eU9"/>
                                 </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="&lt;Translated Text&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LaV-KV-DTJ">
-                                <rect key="frame" x="16" y="187" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSr-DN-3fn">
+                                <rect key="frame" x="0.0" y="443" width="375" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="C9x-dK-Nbd"/>
+                                    <constraint firstAttribute="width" constant="375" id="Nc5-WQ-UEO"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-Yh-JhH">
+                                <rect key="frame" x="329" y="148" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7wU-hn-IGj"/>
+                                    <constraint firstAttribute="width" constant="30" id="QyC-7a-ZaL"/>
+                                </constraints>
+                                <state key="normal" image="Microphone-48-2.png"/>
+                                <connections>
+                                    <action selector="speechTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Gb-WN-xwg"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="&lt;Translated Text&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LaV-KV-DTJ">
+                                <rect key="frame" x="0.0" y="210" width="375" height="165"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="193" id="ObN-e2-wPG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="Vby-Jh-GYH"/>
+                                    <constraint firstAttribute="width" constant="375" id="b8f-Ml-r1L"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="193" id="oJn-Ih-JYa"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSr-DN-3fn">
-                                <rect key="frame" x="0.0" y="323" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-7M-DEK">
-                                <rect key="frame" x="155" y="581" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Translate"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9z-bT-WFG">
+                                <rect key="frame" x="0.0" y="142" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="iJ9-JL-Aow"/>
+                                    <constraint firstAttribute="height" constant="1" id="yIw-ce-0jp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6R-0w-l1v">
+                                <rect key="frame" x="0.0" y="209" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="1Ap-2p-cXC"/>
+                                    <constraint firstAttribute="width" constant="375" id="3qi-vj-eEH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pd-F0-h30">
+                                <rect key="frame" x="0.0" y="333" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Ab5-Ey-DvK"/>
+                                    <constraint firstAttribute="height" constant="1" id="B7j-Si-fEQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw0-6u-ztE">
+                                <rect key="frame" x="0.0" y="19" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="iSt-gS-nzE"/>
+                                    <constraint firstAttribute="width" constant="375" id="vGx-d2-L4D"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eg-YV-VlH">
+                                <rect key="frame" x="0.0" y="374" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="4oU-rM-Add"/>
+                                    <constraint firstAttribute="height" constant="1" id="Lzs-aL-eg6"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tk9-7M-DEK">
+                                <rect key="frame" x="16" y="148" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="1RR-qh-naY"/>
+                                    <constraint firstAttribute="height" constant="30" id="lfZ-wB-Upw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="oSN-RX-sqa"/>
+                                    <constraint firstAttribute="width" constant="30" id="uHU-39-4eW"/>
+                                </constraints>
+                                <state key="normal" title="Translate" image="Checkmark-64.png">
+                                    <color key="titleShadowColor" red="0.92911610700000002" green="0.92911610700000002" blue="0.92911610700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="translate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DUb-BP-5uC"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9291161070478724" green="0.9291161070478724" blue="0.9291161070478724" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wSr-DN-3fn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Rf-wd-hsi"/>
+                            <constraint firstItem="SpB-Yh-JhH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="156.5" id="7Sq-ZH-VVI"/>
+                            <constraint firstItem="j6R-0w-l1v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cb7-0O-r64"/>
+                            <constraint firstItem="0eg-YV-VlH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="41" id="Egs-wj-Fo7"/>
+                            <constraint firstItem="LaV-KV-DTJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="206" id="Kkm-fS-48u"/>
+                            <constraint firstItem="v9z-bT-WFG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-191" id="RIE-e7-ksh"/>
+                            <constraint firstItem="nw0-6u-ztE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-314" id="S5e-U9-gYp"/>
+                            <constraint firstItem="wSr-DN-3fn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-39.5" id="Tyb-yL-NG4"/>
+                            <constraint firstItem="j6R-0w-l1v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-124" id="V4h-G8-Pxt"/>
+                            <constraint firstItem="2pd-F0-h30" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xoy-mp-Aiy"/>
+                            <constraint firstItem="nw0-6u-ztE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b0d-v5-6zN"/>
+                            <constraint firstItem="dii-Vg-90N" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-231" id="cIT-18-hgy"/>
+                            <constraint firstItem="Tk9-7M-DEK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-156.5" id="ktI-pI-YE0"/>
+                            <constraint firstItem="v9z-bT-WFG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n7C-3X-S4A"/>
+                            <constraint firstItem="SpB-Yh-JhH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-170.5" id="niw-at-7nK"/>
+                            <constraint firstItem="2pd-F0-h30" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nr7-4t-Ctl"/>
+                            <constraint firstItem="dii-Vg-90N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r8S-4D-EuG"/>
+                            <constraint firstItem="LaV-KV-DTJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sK1-1a-ju3"/>
+                            <constraint firstItem="0eg-YV-VlH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sPH-ku-V7o"/>
+                            <constraint firstItem="Tk9-7M-DEK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-170.5" id="ug2-A4-0A9"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="languagePicker" destination="wSr-DN-3fn" id="5zn-QZ-hpR"/>
+                        <outlet property="speechButton" destination="SpB-Yh-JhH" id="f5x-QD-dam"/>
                         <outlet property="textToTranslate" destination="dii-Vg-90N" id="7uN-im-EKT"/>
                         <outlet property="translatedText" destination="LaV-KV-DTJ" id="JY5-Sk-HbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="388.15592203898052"/>
+            <point key="canvasLocation" x="336.80000000000001" y="398.95052473763121"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Checkmark-64.png" width="64" height="64"/>
+        <image name="Microphone-48-2.png" width="48" height="48"/>
+    </resources>
 </document>
