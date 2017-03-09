@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
     var languageAnswer = 0
     var pickerData = ["French", "Italian", "German"]
 
+    //Recognize that the speach is in English.
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))  //1
     
     
