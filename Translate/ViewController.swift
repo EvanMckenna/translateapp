@@ -167,8 +167,9 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
             
             //var data = NSMutableData()var data = NSMutableData()
             
-            let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+            let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
             indicator.center = view.center
+            indicator.color = UIColor.blue
             view.addSubview(indicator)
             indicator.startAnimating()
             
@@ -221,8 +222,9 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
                 
                 //var data = NSMutableData()var data = NSMutableData()
                 
-                let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
                 indicator.center = view.center
+                indicator.color = UIColor.blue
                 view.addSubview(indicator)
                 indicator.startAnimating()
                 
@@ -343,7 +345,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
             print("audioEngine couldn't start because of an error.")
         }
         
-        textToTranslate.text = "Say something, I am ready to translate for you!"
+        textToTranslate.text = "Say something, I am ready to translate for you! Press again for me to stop listening"
         
     }
     

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Translate/ViewController.swift"
-            timestampString = "510765854.482354"
+            timestampString = "510769525.759641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "translate(_:)"
             landmarkType = "7">
          </BreakpointContent>
