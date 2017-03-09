@@ -116,7 +116,8 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
         
         //var data = NSMutableData()var data = NSMutableData()
         
-        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        indicator.color = UIColor.blue
         indicator.center = view.center
         view.addSubview(indicator)
         indicator.startAnimating()
@@ -273,10 +274,14 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
     
     func startRecording() {
         
+        //Is the task running?
+        
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
         }
+        
+        //Creating the audio session which prepares the app for the audio recording.
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -287,8 +292,10 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
             print("audioSession properties weren't set because of an error.")
         }
         
+        //Create the request.
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
+        //Making sure that the device is able to record sound.
         guard let inputNode = audioEngine.inputNode else {
             fatalError("Audio engine has no input node")
         }
@@ -299,6 +306,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
         
         recognitionRequest.shouldReportPartialResults = true
         
+        //Setting the audio to speach.
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
             
             var isFinal = false
@@ -320,6 +328,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPickerViewDelegate
             }
         })
         
+        //Start tge audio engine to begin recording.
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
             self.recognitionRequest?.append(buffer)
